@@ -8,7 +8,7 @@ import java.util.stream.Stream;
  */
 public class Practice04 {
 
-    private static char[] str = "1234".toCharArray();
+    private static char[] str = "1224".toCharArray();
 
     public static void main(String[] args) {
         permutation(0, str.length - 1);
@@ -27,10 +27,22 @@ public class Practice04 {
             return;
         }
         for (int i = from; i <= to; i++) {
+            if (!isSwap(from, i)) continue;
             swap(i, from);
             permutation(from + 1, to);
             swap(i, from);
         }
+    }
+
+    private static boolean isSwap(int from, int to) {
+        boolean swap = true;
+        for (int i = from; i < to; i++) {
+            if (str[i] == str[to]) {
+                swap = false;
+                break;
+            }
+        }
+        return swap;
     }
 
     private static void swap(int i, int j) {
