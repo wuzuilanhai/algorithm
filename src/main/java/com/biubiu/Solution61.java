@@ -1,8 +1,5 @@
 package com.biubiu.offer;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * 序列化二叉树
  * Created by zhanghaibiao on 2018/3/5.
