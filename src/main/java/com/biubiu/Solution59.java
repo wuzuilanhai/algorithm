@@ -29,7 +29,8 @@ public class Solution59 {
         int flag = -1;
         while (!queue.isEmpty()) {
             ArrayList<Integer> arrayList = new ArrayList<>();
-            while (queue.size() > 0) {
+            int i = 0, len = queue.size();
+            while (i++ < len) {
                 TreeNode node = queue.poll();
                 arrayList.add(node.val);
                 if (node.left != null) queue.add(node.left);
