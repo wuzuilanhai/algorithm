@@ -1,6 +1,5 @@
 package com.biubiu.offer;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
@@ -10,12 +9,7 @@ import java.util.PriorityQueue;
 public class Solution63 {
 
     private PriorityQueue<Integer> minHeap = new PriorityQueue<>();
-    private PriorityQueue<Integer> maxHeap = new PriorityQueue<>(15, new Comparator<Integer>() {
-        @Override
-        public int compare(Integer o1, Integer o2) {
-            return o2 - o1;
-        }
-    });
+    private PriorityQueue<Integer> maxHeap = new PriorityQueue<>(15, (o1, o2) -> o2 - o1);
     private int count = 0;
 
     public void Insert(Integer num) {
